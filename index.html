@@ -137,6 +137,7 @@
       transition: var(--transition-smooth);
       border: none;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .btn-cta-orange:hover {
@@ -235,7 +236,6 @@
       overflow: hidden;
     }
 
-    /* Elegant Mock UI elements to beautify the placeholder */
     .mock-ui-card {
       position: absolute;
       background-color: #FFFFFF;
@@ -270,10 +270,6 @@
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-    }
-
-    .mock-avatar-blue {
-      background-color: #38BDF8;
     }
 
     .mock-status-dot {
@@ -534,7 +530,6 @@
       border-color: rgba(255, 130, 58, 0.15);
     }
 
-    /* Bento Colors and Gradients */
     .bento-gradient-blue {
       background: linear-gradient(135deg, #E6F3F7 0%, #FFFFFF 100%);
     }
@@ -547,7 +542,6 @@
       background: linear-gradient(135deg, #F0EDFE 0%, #FFFFFF 100%);
     }
 
-    /* Custom Grid Layouts for Bento */
     .bento-wide {
       grid-column: span 2;
     }
@@ -779,7 +773,7 @@
     }
 
     /* ==========================================================================
-       7. FAQ SECTION (DETAILS & SUMMARY)
+       7. FAQ SECTION
        ========================================================================== */
     .faq-section {
       padding: 7rem 0;
@@ -895,7 +889,6 @@
       font-weight: 700;
       color: #FFFFFF;
       margin-bottom: 1.75rem;
-      position: relative;
     }
 
     .footer-logo {
@@ -979,7 +972,7 @@
     }
 
     /* ==========================================================================
-       9. RESPONSIVENESS (MEDIA QUERIES)
+       9. RESPONSIVENESS (MOBILE OPTIMIZED ALAA JAGO BAHASA)
        ========================================================================== */
     @media (max-width: 1024px) {
       .hero-grid {
@@ -1011,18 +1004,43 @@
     }
 
     @media (max-width: 768px) {
+      /* Sembunyikan menu navigasi teks panjang di HP agar bersih, sisakan logo & tombol CTA */
       .nav-links {
-        display: none; /* Sederhana untuk mobile */
+        display: none; 
+      }
+      
+      .nav-container {
+        height: 70px;
+        padding: 0 1rem;
+      }
+
+      .logo {
+        font-size: 1.15rem;
+      }
+
+      .btn-cta-orange {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
       }
       
       .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 3rem;
+        gap: 2.5rem;
       }
 
       .hero-content {
         align-items: center;
+      }
+
+      .hero-headline {
+        font-size: 2.25rem !important;
+        line-height: 1.2 !important;
+      }
+
+      .hero-section {
+        padding: 3.5rem 0 !important;
       }
 
       .hero-btn-group {
@@ -1037,8 +1055,9 @@
         width: 100%;
       }
 
-      .hero-placeholder {
-        height: 350px;
+      /* Sembunyikan elemen hiasan bertumpuk di HP agar tampilan bersih seperti Jago Bahasa */
+      .hero-visual {
+        display: none !important;
       }
 
       .program-grid {
@@ -1084,7 +1103,6 @@
 </head>
 <body>
 
-  <!-- 1. HEADER (NAVBAR) -->
   <header class="header-nav">
     <div class="container nav-container">
       <a href="index.html" class="logo">
@@ -1104,8 +1122,7 @@
     </div>
   </header>
 
-  <!-- 2. HERO SECTION -->
- <section class="hero-section">
+  <section class="hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
         <h1 class="hero-headline" id="hero-title">Pelopor Kursus Private dengan <span>Angsuran</span></h1>
@@ -1122,13 +1139,10 @@
         </div>
       </div>
 
-      <!-- Kolom Kanan -->
       <div class="hero-visual">
         <div class="hero-placeholder">
-          <!-- Geometric float element 1 -->
           <span class="mock-main-icon">🇬🇧</span>
           
-          <!-- Mock card 1: Active tutor profile card -->
           <div class="mock-ui-card mock-tutor-status">
             <div class="mock-avatar">MR</div>
             <div>
@@ -1137,7 +1151,6 @@
             </div>
           </div>
 
-          <!-- Mock card 2: Custom live session tracker -->
           <div class="mock-ui-card mock-lesson-card">
             <div class="mock-card-title">Speaking Progress</div>
             <div class="mock-progress-bar">
@@ -1146,7 +1159,6 @@
             <div class="mock-card-sub">Active speaking: 80%</div>
           </div>
 
-          <!-- Mock card 3: Stats tracker -->
           <div class="mock-ui-card mock-stats-card">
             <div class="mock-stat-num">1-on-1</div>
             <div class="mock-card-title" style="color: var(--color-text-medium);">Private Class Focus</div>
@@ -1156,7 +1168,6 @@
     </div>
   </section>
 
-  <!-- 3. SECTION PROGRAM PREVIEW -->
   <section class="program-preview-section">
     <div class="container">
       <div class="section-title-block">
@@ -1165,7 +1176,6 @@
       </div>
 
       <div class="program-grid">
-        <!-- Kartu 1 -->
         <div class="program-card">
           <div class="program-card-img-placeholder">
             <span class="program-badge">Terpopuler</span>
@@ -1178,7 +1188,6 @@
           </div>
         </div>
 
-        <!-- Kartu 2 -->
         <div class="program-card">
           <div class="program-card-img-placeholder program-card-img-orange">
             <span class="program-badge">Ujian Internasional</span>
@@ -1191,7 +1200,6 @@
           </div>
         </div>
 
-        <!-- Kartu 3 -->
         <div class="program-card">
           <div class="program-card-img-placeholder program-card-img-purple">
             <span class="program-badge">Karir & Profesional</span>
@@ -1211,7 +1219,6 @@
     </div>
   </section>
 
-  <!-- 4. SECTION KEUNGGULAN (BENTO BOX GRID) -->
   <section class="keunggulan-section">
     <div class="container">
       <div class="section-title-block">
@@ -1220,7 +1227,6 @@
       </div>
 
       <div class="bento-grid">
-        <!-- Kotak 1: Metode Belajar (Wide) -->
         <div class="bento-box bento-wide bento-gradient-blue">
           <div class="bento-icon-badge">🎯</div>
           <div class="bento-text-block">
@@ -1229,7 +1235,6 @@
           </div>
         </div>
 
-        <!-- Kotak 2: Jam Terbang Pengajar (Taller) -->
         <div class="bento-box bento-tall bento-gradient-orange">
           <div class="bento-icon-badge">👨‍🏫</div>
           <div class="bento-text-block">
@@ -1239,7 +1244,6 @@
           </div>
         </div>
 
-        <!-- Kotak 3: Progress Tracker -->
         <div class="bento-box bento-gradient-purple">
           <div class="bento-icon-badge">📈</div>
           <div class="bento-text-block">
@@ -1248,7 +1252,6 @@
           </div>
         </div>
 
-        <!-- Kotak 4: Kelas Interaktif -->
         <div class="bento-box bento-gradient-orange">
           <div class="bento-icon-badge">💬</div>
           <div class="bento-text-block">
@@ -1257,13 +1260,11 @@
           </div>
         </div>
 
-        <!-- Kotak 5: Rating -->
         <div class="bento-box bento-gradient-blue" style="justify-content: center; text-align: center; align-items: center;">
           <div class="bento-rating">9.8<span style="font-size: 1.5rem; color: var(--color-text-medium);">/10</span></div>
           <div class="bento-sub-rating">Rating Kepuasan Belajar</div>
         </div>
 
-        <!-- Kotak 6: Cicilan Mandiri -->
         <div class="bento-box bento-gradient-purple">
           <div class="bento-icon-badge">💳</div>
           <div class="bento-text-block">
@@ -1275,7 +1276,6 @@
     </div>
   </section>
 
-  <!-- 5. MID-BANNER CTA SECTION -->
   <section class="mid-banner-section">
     <div class="container">
       <div class="mid-banner-card">
@@ -1299,7 +1299,6 @@
     </div>
   </section>
 
-  <!-- 6. TESTIMONI SECTION -->
   <section class="testimoni-section">
     <div class="container">
       <div class="section-title-block">
@@ -1308,7 +1307,6 @@
       </div>
 
       <div class="testimoni-grid">
-        <!-- Testi 1 -->
         <div class="testimoni-card">
           <span class="quote-icon">“</span>
           <p class="testimoni-text">Skema pembayaran angsuran dari AEC sangat membantu saya. Belajar IELTS 1-on-1 jadi tidak terasa berat secara finansial, dan hasilnya luar biasa, skor target saya tembus!</p>
@@ -1321,7 +1319,6 @@
           </div>
         </div>
 
-        <!-- Testi 2 -->
         <div class="testimoni-card">
           <span class="quote-icon">“</span>
           <p class="testimoni-text">Sebelumnya saya gugup sekali berbicara dalam forum bisnis global. Bersama Ms. Sarah di kelas professional, rasa takut itu hilang berkat simulasi kasus real di pekerjaan.</p>
@@ -1334,7 +1331,6 @@
           </div>
         </div>
 
-        <!-- Testi 3 -->
         <div class="testimoni-card">
           <span class="quote-icon">“</span>
           <p class="testimoni-text">Anak saya belajar privat di program Teens. Tutornya sabar, interaktif, dan cara belajarnya seru dengan game edukatif, nilai rapor bahasa Inggrisnya jadi naik pesat.</p>
@@ -1350,7 +1346,6 @@
     </div>
   </section>
 
-  <!-- 7. FAQ SECTION -->
   <section class="faq-section">
     <div class="container faq-grid">
       <div class="faq-intro">
@@ -1359,7 +1354,6 @@
       </div>
 
       <div class="faq-list">
-        <!-- FAQ 1 -->
         <details>
           <summary>Bagaimana skema pembayaran angsuran bulanan di AEC?</summary>
           <div class="faq-content">
@@ -1367,7 +1361,6 @@
           </div>
         </details>
 
-        <!-- FAQ 2 -->
         <details>
           <summary>Apakah jadwal belajar bisa disesuaikan jika saya sibuk?</summary>
           <div class="faq-content">
@@ -1375,7 +1368,6 @@
           </div>
         </details>
 
-        <!-- FAQ 3 -->
         <details>
           <summary>Apakah saya bisa memilih fokus materi yang ingin dipelajari?</summary>
           <div class="faq-content">
@@ -1383,7 +1375,6 @@
           </div>
         </details>
 
-        <!-- FAQ 4 -->
         <details>
           <summary>Bagaimana jika tutor tidak cocok dengan gaya belajar saya?</summary>
           <div class="faq-content">
@@ -1391,7 +1382,6 @@
           </div>
         </details>
 
-        <!-- FAQ 5 -->
         <details>
           <summary>Apakah ada ujian evaluasi berkala untuk melihat perkembangan?</summary>
           <div class="faq-content">
@@ -1402,10 +1392,8 @@
     </div>
   </section>
 
-  <!-- 8. FOOTER -->
   <footer class="footer-dark">
     <div class="container footer-grid">
-      <!-- Kolom 1 -->
       <div class="footer-col">
         <a href="index.html" class="footer-logo">
           Arrohman English Center<span class="logo-dot">.</span>
@@ -1419,7 +1407,6 @@
         </address>
       </div>
 
-      <!-- Kolom 2 -->
       <div class="footer-col">
         <h4>Kontak Kami</h4>
         <ul class="footer-contact-list">
@@ -1438,7 +1425,6 @@
         </ul>
       </div>
 
-      <!-- Kolom 3 -->
       <div class="footer-col">
         <h4>Bantuan & Panduan</h4>
         <ul class="footer-links-list">
@@ -1449,7 +1435,6 @@
         </ul>
       </div>
 
-      <!-- Kolom 4 -->
       <div class="footer-col">
         <h4>Pilihan Program</h4>
         <ul class="footer-links-list">
@@ -1461,12 +1446,12 @@
       </div>
     </div>
 
-    <!-- Bottom bar -->
     <div class="footer-bottom-bar">
       &copy; 2026 Arrohman English Center. All Rights Reserved.
     </div>
   </footer>
-<script>
+
+  <script>
     // Menyedot file JSON yang nanti dibuat oleh CMS
     fetch('/content/pages/homepage.json')
       .then(response => {
