@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Arrohman English Center</title>
+  <style>
+    /* ==========================================================================
+       GLOBAL STYLE & DESIGN VARIABLES
+       ========================================================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --color-bg-pastel: #E6F3F7;      /* Biru Muda pastel */
+      --color-bg-pastel-alt: #F1F8FA;  /* Lebih cerah untuk alternatif */
+      --color-bg-light: #F8FAFC;       /* Off-white */
+      --color-accent-orange: #FF823A;  /* Oranye Muda / Peach */
+      --color-accent-orange-light: #FFF0E6; /* Light peach background */
+      --color-text-dark: #0F172A;      /* Slate 900 */
+      --color-text-medium: #334155;    /* Slate 700 */
+      --color-text-light: #64748B;     /* Slate 500 */
+      --color-border: #E2E8F0;         /* Slate 200 */
+      
+      --color-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.02);
+      --color-shadow-md: 0 10px 25px rgba(15, 23, 42, 0.04);
+      --color-shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
+      
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg-light);
+      color: var(--color-text-medium);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ==========================================================================
+       1. HEADER (NAVBAR)
+       ========================================================================== */
+    .header-nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      transition: var(--transition-smooth);
+    }
+
+    .logo-dot {
+      color: var(--color-accent-orange);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.25rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--color-text-medium);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link:hover {
+      color: var(--color-accent-orange);
+    }
+
+    .nav-link.active {
+      color: var(--color-accent-orange);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-accent-orange);
+      border-radius: 100px;
+    }
+
+    .btn-cta-orange {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-accent-orange);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(255, 130, 58, 0.3);
+      transition: var(--transition-smooth);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-cta-orange:hover {
+      background-color: #E66C25;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 130, 58, 0.4);
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .about-hero {
+      padding: 6.5rem 0;
+      background-color: var(--color-bg-pastel);
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-size: 3.25rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .about-hero p {
+      font-size: 1.2rem;
+      color: var(--color-text-medium);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ==========================================================================
+       3. VISI & MISI SECTION
+       ========================================================================== */
+    .visi-misi-section {
+      padding: 7rem 0;
+      background-color: var(--color-bg-light);
+    }
+
+    .visi-misi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .visi-box, .misi-box {
+      background-color: #FFFFFF;
+      border-radius: 20px;
+      padding: 3.5rem;
+      box-shadow: var(--color-shadow-md);
+      border: 1px solid var(--color-border);
+      transition: var(--transition-smooth);
+    }
+
+    .visi-box:hover, .misi-box:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--color-shadow-lg);
+      border-color: rgba(255, 130, 58, 0.2);
+    }
+
+    .visi-box h2, .misi-box h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .visi-box h2::before {
+      content: '🎯';
+    }
+
+    .misi-box h2::before {
+      content: '🚀';
+    }
+
+    .visi-misi-text {
+      font-size: 1.1rem;
+      color: var(--color-text-medium);
+      line-height: 1.8;
+    }
+
+    .misi-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .misi-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: 1.1rem;
+      color: var(--color-text-medium);
+      line-height: 1.7;
+    }
+
+    .misi-icon {
+      color: var(--color-accent-orange);
+      font-weight: bold;
+      font-size: 1.25rem;
+      line-height: 1;
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       4. SEJARAH / STORY SECTION
+       ========================================================================== */
+    .sejarah-section {
+      padding: 7rem 0;
+      background-color: var(--color-bg-pastel-alt);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .sejarah-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .sejarah-visual {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sejarah-placeholder {
+      width: 100%;
+      height: 420px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #FFD2B8 0%, #E6F3F7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--color-shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sejarah-badge-mock {
+      background-color: #FFFFFF;
+      padding: 1.5rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #E2E8F0;
+      text-align: center;
+      z-index: 2;
+      transform: rotate(-3deg);
+      transition: var(--transition-smooth);
+    }
+
+    .sejarah-badge-mock:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    .sejarah-badge-icon {
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sejarah-badge-text {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--color-text-dark);
+    }
+
+    .sejarah-badge-sub {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-top: 0.2rem;
+    }
+
+    .sejarah-content h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .sejarah-content p {
+      font-size: 1.1rem;
+      color: var(--color-text-medium);
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+    }
+
+    .sejarah-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================================
+       5. FOOTER
+       ========================================================================== */
+    .footer-dark {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      padding: 5rem 0 0 0;
+      border-top: 1px solid #1E293B;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1.75rem;
+      position: relative;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      letter-spacing: -0.03em;
+    }
+
+    .footer-desc {
+      color: #94A3B8;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-address {
+      font-style: normal;
+      color: #64748B;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-contact-label {
+      font-size: 0.8rem;
+      color: #64748B;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-contact-value {
+      font-size: 0.95rem;
+      color: #CBD5E1;
+      font-weight: 600;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-link-item a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-link-item a:hover {
+      color: var(--color-accent-orange);
+      padding-left: 5px;
+    }
+
+    .footer-bottom-bar {
+      background-color: var(--color-accent-orange);
+      color: #FFFFFF;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* ==========================================================================
+       6. RESPONSIVENESS (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .visi-misi-grid {
+        gap: 2rem;
+      }
+      .sejarah-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Sederhana untuk mobile */
+      }
+      
+      .about-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-hero p {
+        font-size: 1.05rem;
+      }
+
+      .visi-misi-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .visi-box, .misi-box {
+        padding: 2.5rem 2rem;
+      }
+
+      .sejarah-placeholder {
+        height: 300px;
+      }
+
+      .sejarah-content h2 {
+        font-size: 2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-dark {
+        padding: 3.5rem 0 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER (NAVBAR) -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Arrohman English Center<span class="logo-dot">.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Homepage</a></li>
+        <li><a href="program.html" class="nav-link">Our Class Program</a></li>
+        <li><a href="about.html" class="nav-link active">About Us</a></li>
+        <li><a href="tutor.html" class="nav-link">Tutor Profile</a></li>
+      </ul>
+
+      <a href="https://wa.me/6281234567890?text=Halo%20Arrohman%20English%20Center,%20saya%20tertarik%20bertanya%20mengenai%20kelas%20private." target="_blank" rel="noopener noreferrer" class="btn-cta-orange">
+        Tanya Kami
+      </a>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Mengenal Arrohman English Center</h1>
+      <p>Kami berdedikasi penuh untuk melahirkan generasi yang fasih berbahasa Inggris secara aktif dengan menghadirkan bimbingan privat 1-on-1 premium yang dapat dicicil bulanan secara fleksibel tanpa denda dan bunga.</p>
+    </div>
+  </section>
+
+  <!-- 3. VISI & MISI SECTION -->
+  <section class="visi-misi-section">
+    <div class="container visi-misi-grid">
+      <!-- Visi -->
+      <div class="visi-box">
+        <h2>Visi Kami</h2>
+        <p class="visi-misi-text">Menjadi lembaga bimbingan bahasa Inggris privat pionir dan terpercaya di Indonesia yang berkomitmen meratakan akses pendidikan berkualitas global melalui fleksibilitas biaya, kenyamanan belajar, dan kualitas akademis standar internasional.</p>
+      </div>
+      
+      <!-- Misi -->
+      <div class="misi-box">
+        <h2>Misi Kami</h2>
+        <ul class="misi-list">
+          <li class="misi-item">
+            <span class="misi-icon">&bull;</span>
+            <span>Menyediakan kurikulum bimbingan personal (needs-based syllabus) yang dinamis sesuai target belajar siswa.</span>
+          </li>
+          <li class="misi-item">
+            <span class="misi-icon">&bull;</span>
+            <span>Menghadirkan jajaran pengajar profesional berpengalaman, komunikatif, dan bersertifikasi global.</span>
+          </li>
+          <li class="misi-item">
+            <span class="misi-icon">&bull;</span>
+            <span>Mempelopori sistem pembayaran angsuran bulanan yang amanah, transparan, dan tanpa beban finansial tambahan.</span>
+          </li>
+          <li class="misi-item">
+            <span class="misi-icon">&bull;</span>
+            <span>Membangun ekosistem belajar 1-on-1 yang aman, suportif, serta terorientasi penuh pada hasil akhir (outcome-driven).</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SEJARAH SECTION -->
+  <section class="sejarah-section">
+    <div class="container sejarah-grid">
+      <div class="sejarah-visual">
+        <div class="sejarah-placeholder">
+          <div class="sejarah-badge-mock">
+            <div class="sejarah-badge-icon">🏛️</div>
+            <div class="sejarah-badge-text">Sejak 2018</div>
+            <div class="sejarah-badge-sub">Mencerdaskan Bangsa</div>
+          </div>
+        </div>
+      </div>
+      <div class="sejarah-content">
+        <h2>Awal Mula Perjalanan Kami</h2>
+        <p>Arrohman English Center didirikan atas dasar kegelisahan bersama akan sulitnya mendapatkan kelas privat bahasa Inggris berkualitas yang memiliki skema pembayaran ramah di kantong masyarakat umum. Kami percaya bahwa bahasa Inggris adalah kunci pembuka pintu global yang harusnya bisa dinikmati siapa saja tanpa terkendala biaya lunas di muka.</p>
+        <p>Memulai langkah pertama pada tahun 2018 sebagai komunitas bimbingan belajar kecil, AEC secara konsisten berevolusi menjadi lembaga profesional berlisensi resmi yang telah mendampingi ratusan siswa, mulai dari anak-anak, akademis pemburu beasiswa luar negeri, hingga eksekutif perusahaan korporasi global. Melalui skema angsuran mandiri yang kami pelopori, kami bangga dapat mendobrak barrier finansial demi kemajuan pendidikan di Indonesia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FOOTER -->
+  <footer class="footer-dark">
+    <div class="container footer-grid">
+      <!-- Kolom 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          Arrohman English Center<span class="logo-dot">.</span>
+        </a>
+        <p class="footer-desc">
+          Pusat bimbingan belajar bahasa Inggris privat 1-on-1 premium dengan komitmen memberikan kemudahan pembayaran angsuran mandiri bebas bunga dan denda demi mencerdaskan bangsa.
+        </p>
+        <address class="footer-address">
+          <strong>Kantor AEC Utama</strong><br>
+          Jl. Pendidikan Karakter No. 45, Kebayoran Baru, Jakarta Selatan, DKI Jakarta 12150
+        </address>
+      </div>
+
+      <!-- Kolom 2 -->
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <span class="footer-contact-label">Whatsapp</span>
+            <span class="footer-contact-value">+62 812-3456-7890</span>
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-contact-label">Email Support</span>
+            <span class="footer-contact-value">halo@arrohmanenglish.com</span>
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-contact-label">Jam Operasional</span>
+            <span class="footer-contact-value">Senin - Minggu: 08.00 - 21.00 WIB</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3 -->
+      <div class="footer-col">
+        <h4>Bantuan & Panduan</h4>
+        <ul class="footer-links-list">
+          <li class="footer-link-item"><a href="index.html#faq-section">Panduan Angsuran</a></li>
+          <li class="footer-link-item"><a href="index.html#faq-section">Aturan Reschedule</a></li>
+          <li class="footer-link-item"><a href="index.html#testimoni-section">Kebijakan Privasi</a></li>
+          <li class="footer-link-item"><a href="index.html#faq-section">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 4 -->
+      <div class="footer-col">
+        <h4>Pilihan Program</h4>
+        <ul class="footer-links-list">
+          <li class="footer-link-item"><a href="program.html">General English Active</a></li>
+          <li class="footer-link-item"><a href="program.html">IELTS Target Master</a></li>
+          <li class="footer-link-item"><a href="program.html">English for Professional</a></li>
+          <li class="footer-link-item"><a href="program.html">English for Kids & Teens</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom-bar">
+      &copy; 2026 Arrohman English Center. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

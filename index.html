@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrohman English Center - Pelopor Kursus Private dengan Angsuran</title>
+  <style>
+    /* ==========================================================================
+       GLOBAL STYLE & DESIGN VARIABLES
+       ========================================================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --color-bg-pastel: #E6F3F7;      /* Biru Muda pastel */
+      --color-bg-pastel-alt: #F1F8FA;  /* Lebih cerah untuk alternatif */
+      --color-bg-light: #F8FAFC;       /* Off-white */
+      --color-accent-orange: #FF823A;  /* Oranye Muda / Peach */
+      --color-accent-orange-light: #FFF0E6; /* Light peach background */
+      --color-text-dark: #0F172A;      /* Slate 900 */
+      --color-text-medium: #334155;    /* Slate 700 */
+      --color-text-light: #64748B;     /* Slate 500 */
+      --color-border: #E2E8F0;         /* Slate 200 */
+      
+      --color-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.02);
+      --color-shadow-md: 0 10px 25px rgba(15, 23, 42, 0.04);
+      --color-shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
+      
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg-light);
+      color: var(--color-text-medium);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ==========================================================================
+       1. HEADER (NAVBAR)
+       ========================================================================== */
+    .header-nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      transition: var(--transition-smooth);
+    }
+
+    .logo-dot {
+      color: var(--color-accent-orange);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.25rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--color-text-medium);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link:hover {
+      color: var(--color-accent-orange);
+    }
+
+    .nav-link.active {
+      color: var(--color-accent-orange);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-accent-orange);
+      border-radius: 100px;
+    }
+
+    .btn-cta-orange {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-accent-orange);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(255, 130, 58, 0.3);
+      transition: var(--transition-smooth);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-cta-orange:hover {
+      background-color: #E66C25;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 130, 58, 0.4);
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      padding: 6.5rem 0;
+      background-color: var(--color-bg-pastel);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-headline {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-headline span {
+      color: var(--color-accent-orange);
+    }
+
+    .hero-subheadline {
+      font-size: 1.15rem;
+      color: var(--color-text-medium);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .hero-btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-rating-block {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .stars {
+      color: #FBBF24;
+      font-size: 1.25rem;
+      letter-spacing: 0.1em;
+    }
+
+    .rating-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-medium);
+    }
+
+    /* Hero Right Visual Column */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-placeholder {
+      width: 100%;
+      height: 450px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #FFF0E6 0%, #D8EEF3 100%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: var(--color-shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Elegant Mock UI elements to beautify the placeholder */
+    .mock-ui-card {
+      position: absolute;
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid var(--color-border);
+      transition: var(--transition-smooth);
+    }
+
+    .mock-ui-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .mock-tutor-status {
+      top: 40px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 210px;
+    }
+
+    .mock-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--color-accent-orange);
+      color: #FFFFFF;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .mock-avatar-blue {
+      background-color: #38BDF8;
+    }
+
+    .mock-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10B981;
+      display: inline-block;
+    }
+
+    .mock-card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+    }
+
+    .mock-card-sub {
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+    }
+
+    .mock-stats-card {
+      bottom: 50px;
+      right: 30px;
+      width: 180px;
+      text-align: center;
+    }
+
+    .mock-stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-accent-orange);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .mock-lesson-card {
+      bottom: 150px;
+      left: 40px;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mock-progress-bar {
+      width: 100%;
+      height: 6px;
+      background-color: var(--color-border);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .mock-progress-fill {
+      width: 80%;
+      height: 100%;
+      background-color: var(--color-accent-orange);
+      border-radius: 100px;
+    }
+
+    .mock-main-icon {
+      font-size: 5rem;
+      z-index: 1;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* ==========================================================================
+       3. SECTION PROGRAM PREVIEW
+       ========================================================================== */
+    .program-preview-section {
+      padding: 7rem 0;
+      background-color: #FFFFFF;
+    }
+
+    .section-title-block {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .program-card {
+      background-color: var(--color-bg-light);
+      border-radius: 20px;
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      box-shadow: var(--color-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    .program-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--color-shadow-lg);
+      border-color: rgba(255, 130, 58, 0.3);
+    }
+
+    .program-card-img-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, var(--color-bg-pastel) 0%, #AFDEEB 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .program-card-img-orange {
+      background: linear-gradient(135deg, #FFE6D5 0%, #FFC199 100%);
+    }
+
+    .program-card-img-purple {
+      background: linear-gradient(135deg, #EBE8FC 0%, #C4B9F9 100%);
+    }
+
+    .program-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #FFFFFF;
+      color: var(--color-text-dark);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      box-shadow: var(--color-shadow-sm);
+    }
+
+    .program-card-icon {
+      font-size: 3rem;
+    }
+
+    .program-card-body {
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .program-card-body h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .program-card-body p {
+      font-size: 0.95rem;
+      color: var(--color-text-medium);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-outline-orange {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      color: var(--color-accent-orange);
+      border: 2px solid var(--color-accent-orange);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.65rem 1.5rem;
+      border-radius: 8px;
+      transition: var(--transition-smooth);
+      margin-top: auto;
+      text-align: center;
+    }
+
+    .btn-outline-orange:hover {
+      background-color: var(--color-accent-orange);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(255, 130, 58, 0.2);
+    }
+
+    .program-center-cta {
+      text-align: center;
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-text-dark);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-dark:hover {
+      background-color: #1E293B;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.3);
+    }
+
+    /* ==========================================================================
+       4. SECTION KEUNGGULAN (BENTO BOX GRID)
+       ========================================================================== */
+    .keunggulan-section {
+      padding: 7rem 0;
+      background-color: var(--color-bg-pastel-alt);
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(170px, auto);
+      gap: 1.5rem;
+    }
+
+    .bento-box {
+      background-color: #FFFFFF;
+      border-radius: 24px;
+      padding: 2.25rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--color-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .bento-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--color-shadow-md);
+      border-color: rgba(255, 130, 58, 0.15);
+    }
+
+    /* Bento Colors and Gradients */
+    .bento-gradient-blue {
+      background: linear-gradient(135deg, #E6F3F7 0%, #FFFFFF 100%);
+    }
+
+    .bento-gradient-orange {
+      background: linear-gradient(135deg, #FFF0E6 0%, #FFFFFF 100%);
+    }
+
+    .bento-gradient-purple {
+      background: linear-gradient(135deg, #F0EDFE 0%, #FFFFFF 100%);
+    }
+
+    /* Custom Grid Layouts for Bento */
+    .bento-wide {
+      grid-column: span 2;
+    }
+
+    .bento-tall {
+      grid-row: span 2;
+      justify-content: flex-start;
+      gap: 1.5rem;
+    }
+
+    .bento-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      box-shadow: var(--color-shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--color-border);
+    }
+
+    .bento-tall .bento-icon-badge {
+      margin-bottom: 0;
+    }
+
+    .bento-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .bento-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      letter-spacing: -0.015em;
+    }
+
+    .bento-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-medium);
+      line-height: 1.6;
+    }
+
+    .bento-rating {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--color-accent-orange);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .bento-sub-rating {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+    }
+
+    /* ==========================================================================
+       5. MID-BANNER CTA SECTION
+       ========================================================================== */
+    .mid-banner-section {
+      padding: 5rem 0;
+      background-color: #FFFFFF;
+    }
+
+    .mid-banner-card {
+      background: linear-gradient(135deg, #E6F3F7 0%, #FFEFE5 100%);
+      border-radius: 30px;
+      padding: 4rem;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: var(--color-shadow-lg);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .mid-banner-content h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .mid-banner-content p {
+      font-size: 1.1rem;
+      color: var(--color-text-medium);
+      line-height: 1.65;
+      margin-bottom: 2.25rem;
+    }
+
+    .mid-banner-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mid-banner-placeholder {
+      width: 100%;
+      height: 250px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--color-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .scheduler-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-text-dark);
+    }
+
+    .scheduler-slots {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .scheduler-slot {
+      background-color: var(--color-accent-orange-light);
+      color: var(--color-accent-orange);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 130, 58, 0.15);
+    }
+
+    /* ==========================================================================
+       6. TESTIMONI SECTION
+       ========================================================================== */
+    .testimoni-section {
+      padding: 7rem 0;
+      background-color: var(--color-bg-light);
+    }
+
+    .testimoni-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .testimoni-card {
+      background-color: #FFFFFF;
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--color-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .testimoni-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--color-shadow-md);
+      border-color: rgba(255, 130, 58, 0.2);
+    }
+
+    .quote-icon {
+      font-size: 2.5rem;
+      color: #E2E8F0;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .testimoni-text {
+      font-size: 0.95rem;
+      color: var(--color-text-medium);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .testimoni-user {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimoni-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--color-bg-pastel);
+      color: var(--color-text-dark);
+      font-weight: 800;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-border);
+    }
+
+    .testimoni-avatar-orange {
+      background-color: var(--color-accent-orange-light);
+      color: var(--color-accent-orange);
+    }
+
+    .testimoni-avatar-purple {
+      background-color: #F0EDFE;
+      color: #7C3AED;
+    }
+
+    .testimoni-info h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 0.15rem;
+    }
+
+    .testimoni-info p {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       7. FAQ SECTION (DETAILS & SUMMARY)
+       ========================================================================== */
+    .faq-section {
+      padding: 7rem 0;
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 4rem;
+    }
+
+    .faq-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .faq-intro h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .faq-intro p {
+      font-size: 1.05rem;
+      color: var(--color-text-light);
+      line-height: 1.65;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    details {
+      background-color: var(--color-bg-light);
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    details[open] {
+      border-color: var(--color-accent-orange);
+      box-shadow: var(--color-shadow-sm);
+      background-color: #FFFFFF;
+    }
+
+    summary {
+      padding: 1.5rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--color-text-dark);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      outline: none;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--color-text-light);
+      transition: var(--transition-smooth);
+    }
+
+    details[open] summary::after {
+      content: '−';
+      color: var(--color-accent-orange);
+      transform: rotate(180deg);
+    }
+
+    .faq-content {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      font-size: 0.95rem;
+      color: var(--color-text-medium);
+      line-height: 1.65;
+      border-top: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    /* ==========================================================================
+       8. FOOTER
+       ========================================================================== */
+    .footer-dark {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      padding: 5rem 0 0 0;
+      border-top: 1px solid #1E293B;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1.75rem;
+      position: relative;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      letter-spacing: -0.03em;
+    }
+
+    .footer-desc {
+      color: #94A3B8;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-address {
+      font-style: normal;
+      color: #64748B;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-contact-label {
+      font-size: 0.8rem;
+      color: #64748B;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-contact-value {
+      font-size: 0.95rem;
+      color: #CBD5E1;
+      font-weight: 600;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-link-item a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-link-item a:hover {
+      color: var(--color-accent-orange);
+      padding-left: 5px;
+    }
+
+    .footer-bottom-bar {
+      background-color: var(--color-accent-orange);
+      color: #FFFFFF;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* ==========================================================================
+       9. RESPONSIVENESS (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        gap: 2.5rem;
+      }
+      .hero-headline {
+        font-size: 2.75rem;
+      }
+      .program-grid {
+        gap: 1.5rem;
+      }
+      .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .bento-wide {
+        grid-column: span 2;
+      }
+      .bento-tall {
+        grid-row: span 1;
+      }
+      .mid-banner-card {
+        grid-template-columns: 1fr;
+        padding: 3rem;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Sederhana untuk mobile */
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-btn-group {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+      }
+
+      .hero-btn-group .btn-cta-orange,
+      .hero-btn-group .btn-outline-orange {
+        width: 100%;
+      }
+
+      .hero-placeholder {
+        height: 350px;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .bento-wide, .bento-tall {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .mid-banner-card {
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+      }
+
+      .testimoni-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-dark {
+        padding: 3.5rem 0 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER (NAVBAR) -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Arrohman English Center<span class="logo-dot">.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Homepage</a></li>
+        <li><a href="program.html" class="nav-link">Our Class Program</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="tutor.html" class="nav-link">Tutor Profile</a></li>
+      </ul>
+
+      <a href="https://wa.me/6281234567890?text=Halo%20Arrohman%20English%20Center,%20saya%20tertarik%20bertanya%20mengenai%20kelas%20private." target="_blank" rel="noopener noreferrer" class="btn-cta-orange">
+        Tanya Kami
+      </a>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <!-- Kolom Kiri -->
+      <div class="hero-content">
+        <h1 class="hero-headline">Pelopor Kursus Private dengan <span>Angsuran</span></h1>
+        <p class="hero-subheadline">
+          Satu-satunya bimbingan belajar bahasa Inggris privat 1-on-1 premium yang mendukung pembayaran cicilan bulanan mandiri tanpa denda, bunga, atau riba. Dapatkan fokus penuh demi hasil belajar yang optimal.
+        </p>
+        <div class="hero-btn-group">
+          <a href="program.html" class="btn-cta-orange">Lihat Program</a>
+          <a href="about.html" class="btn-outline-orange">Tentang Kami</a>
+        </div>
+        <div class="hero-rating-block">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">Ratusan siswa telah bergabung</span>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan -->
+      <div class="hero-visual">
+        <div class="hero-placeholder">
+          <!-- Geometric float element 1 -->
+          <span class="mock-main-icon">🇬🇧</span>
+          
+          <!-- Mock card 1: Active tutor profile card -->
+          <div class="mock-ui-card mock-tutor-status">
+            <div class="mock-avatar">MR</div>
+            <div>
+              <div class="mock-card-title">Mr. Rahmad, M.A.</div>
+              <div class="mock-card-sub"><span class="mock-status-dot"></span> Online Teaching</div>
+            </div>
+          </div>
+
+          <!-- Mock card 2: Custom live session tracker -->
+          <div class="mock-ui-card mock-lesson-card">
+            <div class="mock-card-title">Speaking Progress</div>
+            <div class="mock-progress-bar">
+              <div class="mock-progress-fill"></div>
+            </div>
+            <div class="mock-card-sub">Active speaking: 80%</div>
+          </div>
+
+          <!-- Mock card 3: Stats tracker -->
+          <div class="mock-ui-card mock-stats-card">
+            <div class="mock-stat-num">1-on-1</div>
+            <div class="mock-card-title" style="color: var(--color-text-medium);">Private Class Focus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SECTION PROGRAM PREVIEW -->
+  <section class="program-preview-section">
+    <div class="container">
+      <div class="section-title-block">
+        <h2 class="section-title">Program Unggulan Kami</h2>
+        <p class="section-subtitle">Pilih kurikulum yang didesain khusus sesuai tingkat kemahiran dan tujuan belajar spesifik Anda.</p>
+      </div>
+
+      <div class="program-grid">
+        <!-- Kartu 1 -->
+        <div class="program-card">
+          <div class="program-card-img-placeholder">
+            <span class="program-badge">Terpopuler</span>
+            <span class="program-card-icon">🗣️</span>
+          </div>
+          <div class="program-card-body">
+            <h3>General English Active</h3>
+            <p>Tingkatkan rasa percaya diri dan kelancaran berbicara bahasa Inggris untuk aktivitas sehari-hari melalui simulasi praktis aktif interaktif.</p>
+            <a href="program.html" class="btn-outline-orange">Selengkapnya</a>
+          </div>
+        </div>
+
+        <!-- Kartu 2 -->
+        <div class="program-card">
+          <div class="program-card-img-placeholder program-card-img-orange">
+            <span class="program-badge">Ujian Internasional</span>
+            <span class="program-card-icon">🎓</span>
+          </div>
+          <div class="program-card-body">
+            <h3>IELTS Target Master</h3>
+            <p>Persiapan intensif menembus skor IELTS target untuk persyaratan beasiswa luar negeri maupun karir profesional global.</p>
+            <a href="program.html" class="btn-outline-orange">Selengkapnya</a>
+          </div>
+        </div>
+
+        <!-- Kartu 3 -->
+        <div class="program-card">
+          <div class="program-card-img-placeholder program-card-img-purple">
+            <span class="program-badge">Karir & Profesional</span>
+            <span class="program-card-icon">💼</span>
+          </div>
+          <div class="program-card-body">
+            <h3>English for Professional</h3>
+            <p>Rancang komunikasi korporat profesional, penulisan email bisnis formal, negosiasi, serta presentasi tingkat eksekutif.</p>
+            <a href="program.html" class="btn-outline-orange">Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-center-cta">
+        <a href="program.html" class="btn-dark">Lihat Semua Program</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SECTION KEUNGGULAN (BENTO BOX GRID) -->
+  <section class="keunggulan-section">
+    <div class="container">
+      <div class="section-title-block">
+        <h2 class="section-title">Kenapa Harus Pilih Arrohman English Center?</h2>
+        <p class="section-subtitle">Sistem belajar privat terbaik yang berorientasi penuh pada kenyamanan belajar siswa dan kemudahan biaya bimbingan.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Kotak 1: Metode Belajar (Wide) -->
+        <div class="bento-box bento-wide bento-gradient-blue">
+          <div class="bento-icon-badge">🎯</div>
+          <div class="bento-text-block">
+            <h3 class="bento-title">Metode Belajar Needs-Based Syllabus</h3>
+            <p class="bento-desc">Materi, topik, dan kecepatan mengajar disesuaikan 100% mengikuti level pemula hingga mahir, minat, serta target pembelajaran khusus Anda.</p>
+          </div>
+        </div>
+
+        <!-- Kotak 2: Jam Terbang Pengajar (Taller) -->
+        <div class="bento-box bento-tall bento-gradient-orange">
+          <div class="bento-icon-badge">👨‍🏫</div>
+          <div class="bento-text-block">
+            <h3 class="bento-title">Pengajar Profesional Bersertifikat</h3>
+            <p class="bento-desc" style="margin-bottom: 1rem;">Seluruh tim tutor kami adalah praktisi akademis lulusan terbaik dengan jam terbang tinggi mengajar kelas private.</p>
+            <p class="bento-desc">Tutor bersertifikasi pengajaran bahasa Inggris internasional seperti TESOL, TEFL, dan IELTS band tinggi.</p>
+          </div>
+        </div>
+
+        <!-- Kotak 3: Progress Tracker -->
+        <div class="bento-box bento-gradient-purple">
+          <div class="bento-icon-badge">📈</div>
+          <div class="bento-text-block">
+            <h3 class="bento-title">Progress Tracker</h3>
+            <p class="bento-desc">Laporan evaluasi performa belajar berkala yang dikirimkan secara berkala langsung setelah sesi selesai.</p>
+          </div>
+        </div>
+
+        <!-- Kotak 4: Kelas Interaktif -->
+        <div class="bento-box bento-gradient-orange">
+          <div class="bento-icon-badge">💬</div>
+          <div class="bento-text-block">
+            <h3 class="bento-title">Kelas Interaktif 1-on-1</h3>
+            <p class="bento-desc">Dapatkan porsi praktik berbicara aktif hingga 80% dari durasi belajar tanpa gangguan siswa lain.</p>
+          </div>
+        </div>
+
+        <!-- Kotak 5: Rating -->
+        <div class="bento-box bento-gradient-blue" style="justify-content: center; text-align: center; align-items: center;">
+          <div class="bento-rating">9.8<span style="font-size: 1.5rem; color: var(--color-text-medium);">/10</span></div>
+          <div class="bento-sub-rating">Rating Kepuasan Belajar</div>
+        </div>
+
+        <!-- Kotak 6: Cicilan Mandiri -->
+        <div class="bento-box bento-gradient-purple">
+          <div class="bento-icon-badge">💳</div>
+          <div class="bento-text-block">
+            <h3 class="bento-title">Cicilan Bulanan Ringan</h3>
+            <p class="bento-desc">Solusi cerdas biaya kursus privat premium dengan angsuran mandiri yang transparan bebas dari denda keterlambatan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. MID-BANNER CTA SECTION -->
+  <section class="mid-banner-section">
+    <div class="container">
+      <div class="mid-banner-card">
+        <div class="mid-banner-content">
+          <h2>Konsultasikan Kebutuhan Belajar Anda Secara Gratis!</h2>
+          <p>Bingung menentukan materi yang paling sesuai dengan kebutuhan akademis atau karir Anda? Diskusikan langsung bersama konsultan akademis senior AEC hari ini.</p>
+          <a href="https://wa.me/6281234567890?text=Halo%20Arrohman%20English%20Center,%20saya%20tertarik%20bertanya%20mengenai%20kelas%20private." target="_blank" rel="noopener noreferrer" class="btn-cta-orange">Konsultasi via WhatsApp</a>
+        </div>
+        <div class="mid-banner-visual">
+          <div class="mid-banner-placeholder">
+            <div class="scheduler-title">📅 Sesi Konsultasi Tersedia Hari Ini</div>
+            <div class="scheduler-slots">
+              <span class="scheduler-slot">10:00 WIB</span>
+              <span class="scheduler-slot">14:00 WIB</span>
+              <span class="scheduler-slot">19:30 WIB</span>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--color-text-light);">*Kuota konsultasi gratis terbatas 5 slot per hari</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. TESTIMONI SECTION -->
+  <section class="testimoni-section">
+    <div class="container">
+      <div class="section-title-block">
+        <h2 class="section-title">Cerita Sukses Siswa Kami</h2>
+        <p class="section-subtitle">Mereka yang telah merasakan peningkatan signifikan setelah belajar secara terarah bersama tutor privat AEC.</p>
+      </div>
+
+      <div class="testimoni-grid">
+        <!-- Testi 1 -->
+        <div class="testimoni-card">
+          <span class="quote-icon">“</span>
+          <p class="testimoni-text">Skema pembayaran angsuran dari AEC sangat membantu saya. Belajar IELTS 1-on-1 jadi tidak terasa berat secara finansial, dan hasilnya luar biasa, skor target saya tembus!</p>
+          <div class="testimoni-user">
+            <div class="testimoni-avatar">AP</div>
+            <div class="testimoni-info">
+              <h4>Aditya Pratama</h4>
+              <p>Mahasiswa UI — IELTS Band 7.5</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testi 2 -->
+        <div class="testimoni-card">
+          <span class="quote-icon">“</span>
+          <p class="testimoni-text">Sebelumnya saya gugup sekali berbicara dalam forum bisnis global. Bersama Ms. Sarah di kelas professional, rasa takut itu hilang berkat simulasi kasus real di pekerjaan.</p>
+          <div class="testimoni-user">
+            <div class="testimoni-avatar testimoni-avatar-orange">RA</div>
+            <div class="testimoni-info">
+              <h4>Rania Alisya</h4>
+              <p>HR Specialist — Business English</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testi 3 -->
+        <div class="testimoni-card">
+          <span class="quote-icon">“</span>
+          <p class="testimoni-text">Anak saya belajar privat di program Teens. Tutornya sabar, interaktif, dan cara belajarnya seru dengan game edukatif, nilai rapor bahasa Inggrisnya jadi naik pesat.</p>
+          <div class="testimoni-user">
+            <div class="testimoni-avatar testimoni-avatar-purple">SL</div>
+            <div class="testimoni-info">
+              <h4>Sultan Luqman</h4>
+              <p>Orang Tua Siswa — Speaking Teens</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container faq-grid">
+      <div class="faq-intro">
+        <h2>Pertanyaan Umum</h2>
+        <p>Butuh penjelasan lebih lanjut mengenai sistem bimbingan belajar privat di Arrohman English Center? Simak rangkuman pertanyaan yang sering diajukan berikut.</p>
+      </div>
+
+      <div class="faq-list">
+        <!-- FAQ 1 -->
+        <details>
+          <summary>Bagaimana skema pembayaran angsuran bulanan di AEC?</summary>
+          <div class="faq-content">
+            Skema pembayaran di AEC sangat fleksibel. Kami menyediakan opsi pembayaran cicilan bulanan mandiri langsung ke lembaga kami tanpa bunga, denda keterlambatan, ataupun penalti finansial. Pembayaran diangsur setiap bulan sebelum siklus kelas dimulai.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details>
+          <summary>Apakah jadwal belajar bisa disesuaikan jika saya sibuk?</summary>
+          <div class="faq-content">
+            Ya, bisa! Sebagai kelas privat 1-on-1, Anda memiliki kebebasan penuh untuk menyusun jadwal belajar (pagi, siang, sore, atau malam) bersama tutor yang ditugaskan. AEC juga mendukung pengajuan reschedule kelas sesuai ketentuan yang disepakati.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details>
+          <summary>Apakah saya bisa memilih fokus materi yang ingin dipelajari?</summary>
+          <div class="faq-content">
+            Tentu saja. Di pertemuan pertama, tim akademik kami akan melakukan asesmen awal untuk mengetahui level dan target belajar spesifik Anda, lalu kami menyusun syllabus custom (Needs-Based Syllabus) untuk diimplementasikan selama proses bimbingan.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details>
+          <summary>Bagaimana jika tutor tidak cocok dengan gaya belajar saya?</summary>
+          <div class="faq-content">
+            Kenyamanan belajar siswa adalah prioritas utama kami. Apabila Anda merasa kurang cocok dengan metode atau gaya mengajar tutor yang ditugaskan, Anda dapat mengajukan permohonan pergantian tutor kepada tim akademik AEC secara gratis.
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details>
+          <summary>Apakah ada ujian evaluasi berkala untuk melihat perkembangan?</summary>
+          <div class="faq-content">
+            Ya, kami melakukan evaluasi progres berkala di pertengahan dan akhir program kelas bimbingan. Di samping itu, pengajar kami akan mengirimkan laporan perkembangan ringkas kepada Anda setiap kali sesi belajar harian selesai.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FOOTER -->
+  <footer class="footer-dark">
+    <div class="container footer-grid">
+      <!-- Kolom 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          Arrohman English Center<span class="logo-dot">.</span>
+        </a>
+        <p class="footer-desc">
+          Pusat bimbingan belajar bahasa Inggris privat 1-on-1 premium dengan komitmen memberikan kemudahan pembayaran angsuran mandiri bebas bunga dan denda demi mencerdaskan bangsa.
+        </p>
+        <address class="footer-address">
+          <strong>Kantor AEC Utama</strong><br>
+          Jl. Pendidikan Karakter No. 45, Kebayoran Baru, Jakarta Selatan, DKI Jakarta 12150
+        </address>
+      </div>
+
+      <!-- Kolom 2 -->
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <span class="footer-contact-label">Whatsapp</span>
+            <span class="footer-contact-value">+62 812-3456-7890</span>
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-contact-label">Email Support</span>
+            <span class="footer-contact-value">halo@arrohmanenglish.com</span>
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-contact-label">Jam Operasional</span>
+            <span class="footer-contact-value">Senin - Minggu: 08.00 - 21.00 WIB</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3 -->
+      <div class="footer-col">
+        <h4>Bantuan & Panduan</h4>
+        <ul class="footer-links-list">
+          <li class="footer-link-item"><a href="index.html#faq-section">Panduan Angsuran</a></li>
+          <li class="footer-link-item"><a href="index.html#faq-section">Aturan Reschedule</a></li>
+          <li class="footer-link-item"><a href="index.html#testimoni-section">Kebijakan Privasi</a></li>
+          <li class="footer-link-item"><a href="index.html#faq-section">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 4 -->
+      <div class="footer-col">
+        <h4>Pilihan Program</h4>
+        <ul class="footer-links-list">
+          <li class="footer-link-item"><a href="program.html">General English Active</a></li>
+          <li class="footer-link-item"><a href="program.html">IELTS Target Master</a></li>
+          <li class="footer-link-item"><a href="program.html">English for Professional</a></li>
+          <li class="footer-link-item"><a href="program.html">English for Kids & Teens</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom-bar">
+      &copy; 2026 Arrohman English Center. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

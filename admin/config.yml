@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main # Pastikan ini sesuai dengan nama cabang utama di GitHub Anda
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "program"
+    label: "Program Kelas"
+    folder: "content/program"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nama Program", name: "title", widget: "string"}
+      - {label: "Deskripsi Program", name: "body", widget: "markdown"}
+      - {label: "Harga Promosi", name: "price", widget: "string"}
+      - {label: "Foto Thumbnail", name: "thumbnail", widget: "image", required: false}
