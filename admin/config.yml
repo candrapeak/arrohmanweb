@@ -1,11 +1,12 @@
 backend:
   name: git-gateway
-  branch: main # Pastikan ini sesuai dengan nama cabang utama di GitHub Anda
+  branch: main # Sesuaikan jika branch Anda bernama 'master'
 
 media_folder: "images"
 public_folder: "/images"
 
 collections:
+  # LACI 1: PROGRAM KELAS (Yang sudah Anda buat sebelumnya)
   - name: "program"
     label: "Program Kelas"
     folder: "content/program"
@@ -16,3 +17,14 @@ collections:
       - {label: "Deskripsi Program", name: "body", widget: "markdown"}
       - {label: "Harga Promosi", name: "price", widget: "string"}
       - {label: "Foto Thumbnail", name: "thumbnail", widget: "image", required: false}
+
+  # LACI 2: PENGATURAN HALAMAN (Ini yang baru untuk OPSI 2)
+  - name: "pages"
+    label: "Pengaturan Halaman"
+    files:
+      - label: "Halaman Beranda (Homepage)"
+        name: "homepage"
+        file: "content/pages/homepage.json"
+        fields:
+          - {label: "Judul Utama (Headline)", name: "hero_headline", widget: "string"}
+          - {label: "Sub-judul (Deskripsi)", name: "hero_desc", widget: "text"}
