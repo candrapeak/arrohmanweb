@@ -1105,12 +1105,11 @@
   </header>
 
   <!-- 2. HERO SECTION -->
-  <section class="hero-section">
+ <section class="hero-section">
     <div class="container hero-grid">
-      <!-- Kolom Kiri -->
       <div class="hero-content">
-        <h1 class="hero-headline">Pelopor Kursus Private dengan <span>Angsuran</span></h1>
-        <p class="hero-subheadline">
+        <h1 class="hero-headline" id="hero-title">Pelopor Kursus Private dengan <span>Angsuran</span></h1>
+        <p class="hero-subheadline" id="hero-desc">
           Satu-satunya bimbingan belajar bahasa Inggris privat 1-on-1 premium yang mendukung pembayaran cicilan bulanan mandiri tanpa denda, bunga, atau riba. Dapatkan fokus penuh demi hasil belajar yang optimal.
         </p>
         <div class="hero-btn-group">
@@ -1467,6 +1466,25 @@
       &copy; 2026 Arrohman English Center. All Rights Reserved.
     </div>
   </footer>
-
+<script>
+    // Menyedot file JSON yang nanti dibuat oleh CMS
+    fetch('/content/pages/homepage.json')
+      .then(response => {
+        if (!response.ok) throw new Error("Data CMS belum ada");
+        return response.json();
+      })
+      .then(data => {
+        // Jika datanya ada, timpa teks bawaan HTML dengan teks dari CMS!
+        if (data.hero_headline) {
+          document.getElementById('hero-title').innerText = data.hero_headline;
+        }
+        if (data.hero_desc) {
+          document.getElementById('hero-desc').innerText = data.hero_desc;
+        }
+      })
+      .catch(error => {
+        console.log("Menampilkan teks statis bawaan karena: ", error.message);
+      });
+  </script>
 </body>
 </html>
